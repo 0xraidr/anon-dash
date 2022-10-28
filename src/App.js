@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import AnonTreasury from "./components/AnonTreasury";
+import Dark from "./components/Dark";
+import DarkChart from "./components/DarkChart";
+import Githhub from "./components/Github";
+import Header from "./components/Header";
+import SocialStats from "./components/SocialStats";
+import OgAnon from "./components/OgAnon";
+import DarkFeed from "./components/DarkFeed";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App text-white w-full h-screen bg-black">
+      <Header />
+      <SocialStats />
+      <Dark />
+      <DarkFeed />
+      <AnonTreasury />
+      <Githhub />
     </div>
   );
 }
