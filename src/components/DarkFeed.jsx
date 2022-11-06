@@ -4,7 +4,7 @@ import DarkLogo from "../images/darklogo.png";
 
 const DarkFeed = () => {
   const [txn, setTxn] = useState([]);
-  const [time, setTime] = useState(); 
+  const [time, setTime] = useState();
   //mvfirpe
 
   //SUPER DELAYED TO NOT EXHAUST API!!! CHECK BOTTOM OF INTERVAL DURATION BELOW!    " 2000000)"
@@ -65,7 +65,7 @@ const DarkFeed = () => {
           };
           return txInfo();
         });
-    }, 20000);
+    }, 200000);
 
     return () => {
       clearInterval(latestTxn);

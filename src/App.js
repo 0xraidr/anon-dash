@@ -1,11 +1,10 @@
 import AnonTreasury from "./components/AnonTreasury";
 import Dark from "./components/Dark";
-import DarkChart from "./components/DarkChart";
 import Githhub from "./components/Github";
 import Header from "./components/Header";
 import SocialStats from "./components/SocialStats";
-import OgAnon from "./components/OgAnon";
 import DarkFeed from "./components/DarkFeed";
+import StakedAnons from "./components/StakedAnons";
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
       <Dark />
       <DarkFeed />
       <AnonTreasury />
+      <StakedAnons />
       <Githhub />
     </div>
   );
