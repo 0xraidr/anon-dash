@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const SocialStats = () => {
   const [discMembers, setDiscMembers] = useState();
+  const [twitterCount, setTwitterCount] = useState();
   const discordMembers = async () => {
     try {
       const apiResult = await axios({
@@ -16,8 +17,21 @@ const SocialStats = () => {
     }
   };
 
+  const twitterFollowers = async () => {
+    const baseUrl = "https://akkoros.herokuapp.com/";
+    const getFollowers = await fetch(
+      `${baseUrl}https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=theanonclub`
+    )
+      .then((res) => res.json())
+      .then((data) => data[0].followers_count);
+
+    setTwitterCount(getFollowers);
+  };
+  twitterFollowers();
+
   useEffect(() => {
     discordMembers();
+    twitterFollowers();
   }, []);
 
   return (
@@ -36,7 +50,7 @@ const SocialStats = () => {
           <div className="text-slate-400">
             Twitter
             <div className="text-2xl text-white font-semibold">
-              soon Followers
+              {twitterCount} Followers
             </div>
           </div>
         </div>

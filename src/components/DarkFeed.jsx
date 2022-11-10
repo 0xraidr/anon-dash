@@ -65,7 +65,7 @@ const DarkFeed = () => {
           };
           return txInfo();
         });
-    }, 200000);
+    }, 20000);
 
     return () => {
       clearInterval(latestTxn);
